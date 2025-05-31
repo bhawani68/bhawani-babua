@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bhawani ❤️ Shree</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      font-size: 5em;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    button {
+      background-color: #ff6f91;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff4b75;
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 1.5em;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bhawani's Love Calculator ❤️</h1>
+  <div class="heart">💖</div>
+  <p>SORRRY ITAA rukwane k liyee but abhi learning phase me hu to jo aur jita ban sakta tha bana diyaa hope you ll love it shree,now just click the damn play buttons!</p>
+  <button onclick="showLove()">Calculate Love</button>
+  <div id="loveMessage" class="message"></div>
+
+  <!-- 🎵 Audio Player with Control -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="SONG.MP4.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <br><br>
+  <button onclick="toggleMusic()">Play/Pause Music 🎶</button>
+
+  <script>
+    function showLove() {
+      const messages = [
+        "Bhawani loves her Shree more than all the stars in the sky ✨",
+        "Her heart beats only for Shree, every moment, every day ❤️",
+        "Their love is a story written by the universe 🌌",
+        "Every smile of Shree makes Bhawani's world brighter ☀️",
+        "Shree is her forever and always 💍",
+        "She adores him beyond words, beyond time, beyond measure 💗"
+      ];
+
+      const message = messages[Math.floor(Math.random() * messages.length)];
+      const display = document.getElementById('loveMessage');
+      display.textContent = message;
+      display.classList.add('show');
+    }
+
+    // 🎵 Music Control Function
+    const music = document.getElementById("bgMusic");
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+</body>
+</html>
